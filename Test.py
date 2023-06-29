@@ -7,7 +7,8 @@ db_2 = pd.read_excel('np_database_2.xlsx')
 
 """Изменение значений в столбце Surface_Charge"""
 db_1['Surface_Charge'] = np.where(db_1['Surface_Charge'] > 0, 'Positive',
-                       np.where(db_1['Surface_Charge'] < 0, 'Negative', 'Neutral'))
+                       np.where(db_1['Surface_Charge'] < 0, 'Negative',
+                        np.where(db_1['Surface_Charge'] == 0, 'Neutral', 'Unknown')))
 
 
 """Объединение и сохранение"""
