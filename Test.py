@@ -13,4 +13,4 @@ db_1['Surface_Charge'] = np.where(db_1['Surface_Charge'] > 0, 'Positive',
 
 """Объединение и сохранение"""
 db_new = pd.concat([db_1, db_2])
-db_new.to_csv('np_database_3.csv', index=False)
+db_new.to_csv('database_new.csv', index=False)
