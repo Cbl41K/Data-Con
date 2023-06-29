@@ -20,8 +20,8 @@ db_2['Cell age: embryonic (E), Adult (A)'] = np.where(db_2['Cell age: embryonic 
                         np.where(db_2['Cell age: embryonic (E), Adult (A)'] == 'Fetus', 'E', 'Unknown')))
 
 """Исправление отрицательной выживаемости"""
-db_1['Cell_Viability (%)'] = np.where(db_1['Cell_Viability (%)'] < 0, 0, db_1['Cell_Viability (%)'])
-db_2['Cell_Viability (%)'] = np.where(db_2['Cell_Viability (%)'] < 0, 0, db_2['Cell_Viability (%)'])
+db_1 = db_1.drop(db_1[db_1['Cell_Viability (%)'] < 0].index)
+db_2 = db_2.drop(db_2[db_2['Cell_Viability (%)'] < 0].index)
 
 
 """Объединение и сохранение"""
