@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 
 """Чтение баз"""
-db_1 = pd.read_excel('np_database_1.xlsx')
-db_2 = pd.read_excel('np_database_2.xlsx')
+db_1 = pd.read_excel('database1.xlsx')
+db_2 = pd.read_excel('database2.xlsx')
 
 """Изменение значений в столбце Surface_Charge"""
 db_1['Surface_Charge'] = np.where(db_1['Surface_Charge'] > 0, 'Positive',
